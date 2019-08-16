@@ -5,6 +5,7 @@ const logger = require('../logger')
 const { bookmarks } = require('../store')
 
 
+
 const bookmarksRouter = express.Router()
   const bodyParser = express.json()
 
@@ -62,7 +63,7 @@ bookmarksRouter
   })
 
   bookmarksRouter
-  .route('/bookmarks/:id')
+  .route('/bookmarks/:bookmark_id')
   .get((req, res) => {
     const { id } = req.params;
     const bookmark = bookmarks.find(b => b.id == id);
